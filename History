@@ -10,3 +10,5 @@ Some attempts at optimising standard sorting codes
 
 3 -added in creation of random array at start of main() using random seed from clock.
   -testing with larger random arrays also found that sort() was 2-3 times faster then swapSort()
+
+4 -Changed swapSort() to make it more effieciant by reducing number of chacks on already sorted elements.
