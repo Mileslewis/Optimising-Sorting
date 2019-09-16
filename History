@@ -7,3 +7,6 @@ Some attempts at optimising standard sorting codes
 
 2 -swapSort was repeating for ever after completing swaps due to an error on while loop. Changed to while b true to fix this.
   -added in a Timer class which can be used to time how long sorts take. Unsurprisingly sort() was about twice as fast for this array.
+
+3 -added in creation of random array at start of main() using random seed from clock.
+  -testing with larger random arrays also found that sort() was 2-3 times faster then swapSort()
