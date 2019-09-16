@@ -1,0 +1,7 @@
+# Optimising-Sorting
+Some attempts at optimising standard sorting codes
+16/09/19
+1 - Made initial sort() and swapSort() functions and tested them on a descending array from 10 to 1.
+
+2 -swapSort was repeating for ever after completing swaps due to an error on while loop. Changed to while b true to fix this.
+  -added in a Timer class which can be used to time how long sorts take. Unsurprisingly sort() was about twice as fast for this particular array.
