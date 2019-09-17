@@ -1,0 +1,51 @@
+# Optimising-Sorting
+ 
+ My main end-goal with this project is to try to implement a pre-sorting algorithm which can be used to try to place
+ elements of an array into their expected final positions (using either uniform or normal distribution to calculate
+ this depending on the data). This should mean that a finishing sorting algorithm should have less to do as
+ elements will generally be more ordered already once it recieves the array so should be quicker. Alse hopefully the 
+ preSort should also be quite quick as it will only be checking each element once rather that comparing elements with
+ other ones which ends up requiring something of order (elements)^2 checks. This means we can decrease the total time
+ taken to sort arrays, especially large ones.
+ Also as I am still learning coding this should be a good oppurtunity to learn more while trying to do this.
+ 
+ sort()
+ First function I have created is sort() which puts smallest value in first element then second smallest value in second 
+ element etc. If there are n elements this will need n-1 checks to find the smallest then n-2 checks to find the second
+ smallest etc. so total checks will always be sum of integers up to n-1 which is n(n-1)/2. Which for large numbers is pretty
+ much (n^2)/2. Swaps will also always be n-1 as it only does one swap per element exluding the last one which should
+ already be correct once the others are. So for large arrays:
+ Swaps~n
+ Checks~(n^2)/2
+ 
+ swapSort()
+ Second function I created is swapSort() which goes through all the elements, swapping any adjacent ones in the wrong order
+ until no more elements can be swapped at which point array is sorted. Number of swaps and checks required varies based on
+ the initial array but by putting counters for swaps and checks into the function and testing on larger arrays I found that
+ it usually took around (n^2)/4 checks and (n^2)/4 swaps to complete and always a similar amount of both (slightly fewer swaps):
+ Swaps~(n^2)/4
+ Checks~(n^2)/4
+ 
+ Timing Comparison
+ Using the timer I could time how long these functions took to sort the same randomly generated arrays and found that
+ swapSort() took about twice as long as sort() for large arrays. Using algebra on the swaps and checks shows that swaps
+ seem to take about 3 times as long to complete as checks in order for this the be the case.
+ 
+ Introducing preSort()
+ My first attempt at a preSort was just to go through the elements one by one and put them into where they are estimated to
+ end up in the array. This is not ideal as some elements won't even get checked and some will get checked multiple times and
+ also some elements will be swapped out of positions they were already swapped in to. However this still do some efective sorting.
+ sort() will always run the same regardless of how sorted the array it recieves is so I used the preSort() before swapSort()
+ and found that in large arrays (which also had a large range of allowed integer values) it reduced the swaps and checks required
+ by swapSort() to around (n^2)/5. It also ran very quickly so added negligable time to total sort time. However it is less
+ effective when the range of values is small (as multiple duplicate values will try to be in the same elements) and also
+ did not reduce total time taken to less than that of sort() so definately some room for improvement!
+ 
+ Sample output as of 17/09/2019 using 10000 elements with values range 1-10000.
+ 
+ 3.35491 time was taken with sort.
+5.30154 time was taken for swapSort with preSort.
+6.36259 time was taken with just swapSort.
+ 
+ 
+ 
