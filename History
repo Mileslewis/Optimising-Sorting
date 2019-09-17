@@ -12,3 +12,9 @@ Some attempts at optimising standard sorting codes
   -testing with larger random arrays also found that sort() was 2-3 times faster then swapSort()
 
 4 -Changed swapSort() to make it more effieciant by reducing number of chacks on already sorted elements.
+
+17/09/19
+
+1 - Made preliminary preSort() function which can be used before swapSort() to put elements in roughly the correct position so that fewer
+swaps will be required by swapSort().
+- added in an option to print the checks and swaps done by swapSort to see how many are done and how many fewer when preSort() used.
