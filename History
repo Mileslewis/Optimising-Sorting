@@ -18,3 +18,4 @@ Some attempts at optimising standard sorting codes
 1 - Made preliminary preSort() function which can be used before swapSort() to put elements in roughly the correct position so that fewer
 swaps will be required by swapSort().
 - added in an option to print the checks and swaps done by swapSort to see how many are done and how many fewer when preSort() used.
+- Added an about section to explain the project and show results.
